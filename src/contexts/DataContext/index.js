@@ -40,7 +40,8 @@ export const DataProvider = ({ children }) => {
       const sortedEvents = data?.events.sort(
         (evtA, evtB) => new Date(evtB.date) - new Date(evtA.date)
       );
-      setLast(sortedEvents?.[0]);
+      const lastEventResult = sortedEvents?.[0]
+      setLast(lastEventResult);
     }
   }
 
