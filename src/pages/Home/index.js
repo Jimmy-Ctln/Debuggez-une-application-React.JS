@@ -58,7 +58,7 @@ const Page = () => {
       <section className="PeoplesContainer">
         <h2 id="notre-equipe" className="Title">Notre équipe</h2>
         <p>Une équipe d’experts dédiés à l’ogranisation de vos événements</p>
-        <div className="ListContainer">
+        <div className="ListContainer" data-testid='people-container'>
           <PeopleCard
             imageSrc="/images/stephanie-liverani-Zz5LQe-VSMY-unsplash.png"
             name="Samira"
@@ -114,8 +114,8 @@ const Page = () => {
       </div>
     </main>
     <footer className="row">
-      <div className="col presta">
-        <h3>Notre derniére prestation</h3>
+      <div className="col presta" data-testid='last-event'>
+        <h3>Notre dernière prestation</h3>
         <EventCard
           imageSrc={last ? last.cover : 'Loading..'}
           title={last ? last.title : 'Loading..'}
