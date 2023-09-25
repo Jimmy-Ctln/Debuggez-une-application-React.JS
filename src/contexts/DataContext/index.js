@@ -19,7 +19,6 @@ export const api = {
 export const DataProvider = ({ children }) => {
   const [error, setError] = useState(null);
   const [data, setData] = useState(null);
-  // Modification here
   const [last, setLast] = useState();
 
   const getData = useCallback(async () => {
@@ -34,23 +33,20 @@ export const DataProvider = ({ children }) => {
     getData();
   });
 
-  // Modification here
   function updateLastEvent() {
     if (data?.events) {
       const sortedEvents = data?.events.sort(
         (evtA, evtB) => new Date(evtB.date) - new Date(evtA.date)
       );
-      const lastEventResult = sortedEvents?.[0]
+      const lastEventResult = sortedEvents?.[0];
       setLast(lastEventResult);
     }
   }
 
-  // Modification here
   useEffect(() => {
     updateLastEvent();
   }, [data, updateLastEvent]);
 
-  // Modification here
   return (
     <DataContext.Provider
       // eslint-disable-next-line react/jsx-no-constructed-context-values
